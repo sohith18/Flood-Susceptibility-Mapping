@@ -1,80 +1,94 @@
-# 🌊 Flood Susceptibility Mapping — Assam, India
+# Flood Susceptibility Mapping of Assam, India
 
-A GIS + Machine Learning project aimed at identifying flood-prone zones in the state of Assam using geospatial features and predictive modeling.
-
----
-
-## 📌 Problem Statement
-
-Assam is highly vulnerable to seasonal flooding due to the Brahmaputra River and heavy monsoon rainfall. Accurate identification of flood-prone zones is essential for proactive disaster management and mitigation.
+This project focuses on developing a flood susceptibility mapping model for the state of Assam using a combination of GIS-based spatial analysis and machine learning techniques. The objective is to support disaster preparedness by identifying regions vulnerable to flooding based on historical and environmental data.
 
 ---
 
-## 🎯 Objective
+## Objective
 
-To develop a machine learning model that accurately predicts flood susceptibility using geospatial features, thereby assisting planners in risk assessment and emergency preparedness.
-
----
-
-## 🧩 Features Used
-
-Derived from DEMs and remote sensing data:
-
-- **Slope**
-- **Topographic Roughness Index (TRI)**
-- **Topographic Position Index (TPI)**
-- **Distance from River**
-- **Rainfall**
-- **NDVI (Vegetation Index)**
-- **Land Use / Land Cover (LULC)**
+To create a reliable and accurate predictive model for identifying flood-prone zones in Assam by integrating geospatial features with machine learning algorithms.
 
 ---
 
-## 🗺️ Data Sources
+## Data Sources
+
+The following publicly available datasets were used:
 
 - [Bhuvan (NRSC)](https://bhuvan.nrsc.gov.in)
 - [Bhoonidhi (NRSC)](https://bhoonidhi.nrsc.gov.in)
-- [CHRS Rainfall](https://chrsdata.eng.uci.edu)
-- [Open Government Data Portal](https://data.gov.in)
+- [CHRS Rainfall Data](https://chrsdata.eng.uci.edu)
+- [Open Government Data Portal (India)](https://data.gov.in)
 
 ---
 
-## 🧠 Models Implemented
+## Features Extracted
 
-| Model                        | Accuracy (%) | Notes                     |
-|-----------------------------|--------------|---------------------------|
-| 🟢 Random Forest             | 97.50        | Best performance overall  |
-| 🔵 Support Vector Machine    | 88.09        | Strong generalization     |
-| 🟡 Multi-Layer Perceptron    | 85.53        | Neural model baseline     |
+The model was trained on the following geospatial and environmental features derived using QGIS and remote sensing tools:
 
----
-
-## 📌 Methodology
-
-1. Extracted geospatial features using **QGIS**.
-2. Created a flood inventory dataset with 200 points (100 flooded, 100 unflooded).
-3. Trained ML models using 159 points and tested on 41.
-4. Evaluated results using accuracy, confusion matrix, Producer's and User's Accuracy (PA/UA).
+- Slope
+- Topographic Roughness Index (TRI)
+- Topographic Position Index (TPI)
+- Distance from River
+- Rainfall
+- NDVI (Normalized Difference Vegetation Index)
+- Land Use / Land Cover (LULC)
 
 ---
 
-## ✅ Key Highlights
+## Methodology
 
-- Leveraged both spatial and statistical techniques for flood risk prediction.
-- Random Forest achieved the highest test accuracy of **97.5%**.
-- Validated performance using real-world data and visual inspection.
-- Built upon methodologies referenced from research in India and Nigeria.
-
----
-
-## 📂 Dataset & Resources
-
-📁 [Access dataset, maps, and visualizations (OneDrive)](https://iiitbac-my.sharepoint.com/:f:/g/personal/siddharth_maramreddy_iiitb_ac_in/EknJ2fb4i3FPnTzT_l-Cc_MBtPqr3xqY1pNMBrNdeNpT2Q?e=hj20o6)
+1. Historical flood inventory was created using known flood-prone and flood-free locations (100 each).
+2. Feature extraction was performed using QGIS tools and raster processing.
+3. Machine learning models were trained and validated using a stratified split (159 training points, 41 testing points).
+4. Performance was assessed using accuracy metrics, confusion matrices, and PA/UA scores.
 
 ---
 
-## 👥 Team
+## Models and Performance
 
-- **Sai Venkata Sohith Gutta**  
-- **Maramreddy Siddharth Reddy**  
+| Model                        | Accuracy (%) |
+|-----------------------------|--------------|
+| Random Forest               | 97.50        |
+| Support Vector Machine (SVM)| 88.09        |
+| Multi-Layer Perceptron (MLP)| 85.53        |
+
+Random Forest yielded the best results in terms of classification accuracy, outperforming both SVM and MLP models.
+
+---
+
+## Results
+
+- Successfully classified flood-prone regions with high confidence using spatial and temporal features.
+- Random Forest model demonstrated strong generalization with 97.5% accuracy.
+- The final susceptibility map enables visual interpretation and planning for flood mitigation.
+
+---
+
+## Visualizations and Resources
+
+Complete results, maps, and datasets are accessible at the following location:
+
+🔗 [Flood Mapping Resources (OneDrive)](https://iiitbac-my.sharepoint.com/:f:/g/personal/siddharth_maramreddy_iiitb_ac_in/EknJ2fb4i3FPnTzT_l-Cc_MBtPqr3xqY1pNMBrNdeNpT2Q?e=hj20o6)
+
+---
+
+## Team Members
+
+- **Sai Venkata Sohith Gutta**
+- **Maramreddy Siddharth Reddy**
 - **Shreyas S**
+
+---
+
+## Tools Used
+
+- QGIS 3.x
+- Python (NumPy, Pandas, Scikit-learn)
+- Remote Sensing & Raster Processing
+- CSV, GeoTIFF, and Shapefile-based spatial analysis
+
+---
+
+## Acknowledgements
+
+This project was developed as part of the GIS course at the International Institute of Information Technology, Bangalore. The team acknowledges the use of open government datasets and QGIS software in the successful execution of this work.
